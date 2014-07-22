@@ -39,8 +39,8 @@ def load(dataset, workload):
     insertstart = insertcount * env.roledefs['client'].index(env.host)
 
     cmd =  '~/ycsb-0.1.4/bin/ycsb load mongodb'
-    cmd += ' -P {dataset}'.format(dataset)
-    cmd += ' -P {workload}'.format(workload)
+    cmd += ' -P ~/datasets/{dataset}'.format(dataset)
+    cmd += ' -P ~/workloads/{workload}'.format(workload)
     cmd += ' -p insertstart={start}'.format(insertstart)
     cmd += ' -p insertcount={count}'.format(insertcount)
     cmd += ' -p mongodb.url=localhost'
@@ -56,8 +56,8 @@ def run(dataset, workload):
     execute(syncworkloads)
 
     cmd =  '~/ycsb-0.1.4/bin/ycsb run mongodb'
-    cmd += ' -P {dataset}'.format(dataset)
-    cmd += ' -P {workload}'.format(workload)
+    cmd += ' -P ~/datasets/{dataset}'.format(dataset)
+    cmd += ' -P ~/workloads/{workload}'.format(workload)
     cmd += ' -p mongodb.url=localhost:27017'
     cmd += ' -threads 32'
     cmd += ' > run.out 2> run.err'
