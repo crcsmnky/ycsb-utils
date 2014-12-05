@@ -5,9 +5,9 @@ import mongod
 import config
 
 env.roledefs = {
-    'mongod': open('hosts/mongoshosts', 'r').read().splitlines(),
+    'mongod': open('hosts/mongodhosts', 'r').read().splitlines(),
     'mongos': open('hosts/mongoshosts', 'r').read().splitlines(),
-    'config': open('hosts/mongoshosts', 'r').read().splitlines(),
+    'config': open('hosts/confighosts', 'r').read().splitlines(),
     'client': open('hosts/clienthosts', 'r').read().splitlines()
 }
 
